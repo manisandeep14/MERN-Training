@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Example</title>
+</head>
+
+<body>
+  <form action="./success.html" method="post">
+    <label for="username">Username : </label>
+    <input type="text" name="username" placeholder="Enter your name" minlength="3" maxlength="20" required>
+    <br><br>
+
+    <label for="email">Email : </label>
+    <input type="email" name="email" autofocus pattern="^[a-z0-9A-Z]+@[a-z]+.(com|in)$" required>
+    <br><br>
+
+    <label for="password">Password : </label>
+    <input type="password" required>
+    <br><br>
+
+    <label for="age">Age : </label>
+    <input type="number" name="age" max="20" min="13">
+    <br><br>
+
+    <label for="marks">Marks : </label>
+    <input type="number" name="marks" step="5">
+    <br><br>
+
+    <label for="gender">Gender : </label>
+    <input type="radio" name="gender" value="male" checked>Male
+    <input type="radio" name="gender" value="female">Female
+    <input type="radio" name="gender" value="other">Other
+    <br><br>
+
+    <label for="course">Course : </label>
+    <input type="checkbox" name="course" value="C">C
+    <input type="checkbox" name="course" value="Java">Java
+    <input type="checkbox" name="course" value="Python">Python
+    <br><br>
+
+    <label for="country">Country : </label>
+    <select name="country" id="country">
+      <option value="NA">----</option>
+      <option value="India">India</option>
+      <option value="USA">USA</option>
+      <option value="Germany">Germany</option>
+    </select>
+    <br><br>
+
+    <button type="button" disabled>Login</button>
+    <button type="button">SignUp</button>
+    <br><br>
+
+    <label for="address">Address : </label>
+    <textarea name="address" cols="10" rows="5"></textarea>
+    <br><br>
+
+    <input type="search"><br><br>
+    <input type="url"> <br><br>
+    <input type="range"> <br><br>
+    <input type="date">
+    <input type="datetime-local">
+    <input type="color">
+    <br><br>
+
+    <button type="reset">Reset</button>
+    <!-- <button type="submit">Submit</button> -->
+    <input type="submit">
+
+  </form>
+
+  <hr>
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Example</title>
+  </head>
+
+  <body>
+    <center>
+      <form action="./success.html" method="post">
+        <label for="username">Username : </label>
+        <input type="text" name="username" placeholder="Enter your name" minlength="3" maxlength="20" required>
+        <br><br>
+
+        <label for="email">Email : </label>
+        <input type="email" name="email" autofocus pattern="^[a-z0-9A-Z]+@[a-z]+.(com|in)$" required>
+        <br><br>
+
+        <label for="password">Password : </label>
+        <input type="password" required>
+        <br><br>
+
+        <label for="age">Age : </label>
+        <input type="number" name="age" max="20" min="13">
+        <br><br>
+
+        <label for="marks">Marks : </label>
+        <input type="number" name="marks" step="5">
+        <br><br>
+
+        <label for="gender">Gender : </label>
+        <input type="radio" name="gender" value="male" checked>Male
+        <input type="radio" name="gender" value="female">Female
+        <input type="radio" name="gender" value="other">Other
+        <br><br>
+
+        <label for="course">Course : </label>
+        <input type="checkbox" name="course" value="C">C
+        <input type="checkbox" name="course" value="Java">Java
+        <input type="checkbox" name="course" value="Python">Python
+        <br><br>
+
+        <label for="country">Country : </label>
+        <select name="country" id="country">
+          <option value="NA">----</option>
+          <option value="India">India</option>
+          <option value="USA">USA</option>
+          <option value="Germany">Germany</option>
+        </select>
+        <br><br>
+
+        <button type="button" disabled>Login</button>
+        <button type="button">SignUp</button>
+        <br><br>
+
+        <label for="address">Address : </label>
+        <textarea name="address" cols="10" rows="5"></textarea>
+        <br><br>
+
+        <input type="search"><br><br>
+        <input type="url"> <br><br>
+        <input type="range"> <br><br>
+        <input type="date">
+        <input type="datetime-local">
+        <input type="color">
+        <br><br>
+
+        <button type="reset">Reset</button>
+        <!-- <button type="submit">Submit</button> -->
+        <input type="submit">
+
+      </form>
+    </center>
+    <hr>
+    <center>
+      <table>
+        <caption>Registration Form</caption>
+        <tbody>
+          <tr>
+            <td>
+              <label for="username">Username</label>
+            </td>
+            <td>:</td>
+            <td>
+              <input type="text" name="username" placeholder="Enter your name" minlength="3" maxlength="20" required>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <label for="email">Email</label>
+            </td>
+            <td>:</td>
+            <td>
+              <input type="email" name="email" autofocus pattern="^[a-z0-9A-Z]+@[a-z]+.(com|in)$" required>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <label for="gender">Gender</label>
+            </td>
+            <td>:</td>
+            <td>
+              <input type="radio" name="gender" value="male" checked>Male
+              <input type="radio" name="gender" value="female">Female
+              <input type="radio" name="gender" value="other">Other
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </center>
+  </body>
+
+  </html>
+</body>
+
+</html>
