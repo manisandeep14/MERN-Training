@@ -44,7 +44,7 @@ p{
 
 
 /* Box- model all about margins, padding */
-.box{
+.allbox{
   display: inline-block;
   border: 2px solid  black;
   margin-bottom: 20px;
@@ -108,7 +108,7 @@ p{
 }
 .posBox4{
   position : fixed;
-  right: 0;
+  right: 20px;
   bottom: 20px;
   background-color: pink;
 }
@@ -124,6 +124,7 @@ p{
   
 }
 .box{
+  border: 2px solid black;
   width: 200px;
   height: 150px;
   display: block;
