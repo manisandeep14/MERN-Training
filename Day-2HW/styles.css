@@ -1,15 +1,37 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 20px;
+    margin: 10px;
     background-color: #fdf5e6;
     color: #333;
 }
 
 header {
     background-color: #ffa500;
-    padding: 15px;
+    padding: 5px;
     text-align: center;
     color: white;
+    margin: 0px 10px;
+}
+
+.Navigator{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#mark{
+    margin: 0;
+    padding: 0;
+    
+}
+.mark a{
+    cursor: pointer;
+}
+
+
+.image{
+    width: 70px;
+    height: 70px;
 }
 
 nav {
@@ -21,18 +43,39 @@ nav a {
     text-decoration: none;
     color: #0056b3;
 }
-
-img {
-    display: block;
-    margin: 20px auto;
-    width: 80%;
-    max-width: 600px;
+.card-section{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-ul, ol {
-    margin-left: 20px;
-    padding-left: 10px;
+.card{
+    width: 300px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+    padding: 10px;
+    background-color: #ffa500;
+    box-shadow: 5px 5px 5px rgb(85, 88, 88);
 }
+
+.car-image{
+    width: 300px;
+}
+.block-cover{
+    width: 300px;
+    background-color: rgb(246, 167, 76);
+}
+
+.card-info{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0px; 
+}
+
+
 
 iframe {
     display: block;
