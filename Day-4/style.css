@@ -1,0 +1,143 @@
+body{
+  font-family: arial;
+  font-size: 20px;
+}
+
+.bgColor{
+  border: 2px solid black;
+  background-color: lightblue;
+  width: 1400px;
+  height: 600px;
+}
+.bgText{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bgImage1{
+  width: 1400px;
+  height: 600px;
+  background-image: url(./images/image.png);
+  margin-top: 10px;
+  border: 2px solid black;
+  color: white;
+  font-weight: bold;
+  background-repeat: repeat;
+}
+
+.bgImage2{
+  width: 1400px;
+  height: 600px;
+  background-image: url(./images/image.png);
+  margin-top: 10px;
+  border: 2px solid black;
+  color: white;
+  font-weight: bold;
+  background-repeat: no-repeat;
+}
+
+.bgImage3{
+  width: 1400px;
+  height: 600px;
+  background-image: url(./images/image.png);
+  margin-top: 10px;
+  border: 2px solid black;
+  color: white;
+  font-weight: bold;
+  background-repeat: repeat-x;
+}
+
+.bgImage4{
+  width: 1400px;
+  height: 1400px;
+  background-image: url(./images/image.png);
+  margin-top: 10px;
+  border: 2px solid black;
+  color: white;
+  font-weight: bold;
+  background-repeat: repeat-y;
+}
+
+.bgImage5{
+  width: 1400px;
+  height: 1400px;
+  background-image: url(./images/image.png);
+  margin-top: 10px;
+  border: 2px solid black;
+  color: white;
+  font-weight: bold;
+  background-position: left top;
+  background-repeat: no-repeat;
+}
+
+.bgImage6{
+  width: 1400px;
+  height: 1400px;
+  background-image: url(./images/image.png);
+  margin-top: 10px;
+  border: 2px solid black;
+  color: white;
+  font-weight: bold;
+  background-position: right bottom;
+  background-repeat: no-repeat;
+}
+
+.bgImage9{
+  width: 1400px;
+  height: 1400px;
+  background-image: url(./images/image.png);
+  margin-top: 10px;
+  border: 2px solid black;
+  color: white;
+  font-weight: bold;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bgImage7{
+  width: 1400px;
+  height: 600px;
+  background-image: url(./images/image.png);
+  margin-top: 10px;
+  border: 2px solid black;
+  color: white;
+  font-weight: bold;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.bgImage8{
+  width: 1400px;
+  height: 600px;
+  background-image: url(./images/image.png);
+  margin-top: 10px;
+  border: 2px solid black;
+  color: white;
+  font-weight: bold;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bgImage10{
+  width: 1400px;
+  height: 600px;
+  background-image: url(./images/image.png);
+  margin-top: 10px;
+  border: 2px solid black;
+  color: white;
+  font-weight: bold;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+}
+
+.bgImage11{
+  width: 1400px;
+  height: 600px;
+  background-image: url(./images/image.png);
+  margin-top: 10px;
+  border: 2px solid black;
+  color: white;
+  font-weight: bold;
+  background-attachment: fixed;
+}
