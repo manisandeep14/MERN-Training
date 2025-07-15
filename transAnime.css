@@ -1,0 +1,91 @@
+
+
+center{
+  font-family: arial;
+  font-size: 30px;
+  font-weight: bold;
+}
+#divs{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: arial;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 20px;
+}
+
+.container{
+  display: flex;
+}
+
+.transform,.transform-1,.transform-2,.transform-3,.transform-4,.transform-6,.transform-5,.transform-7{
+  border: 2px solid black;
+  width: 100px;
+  height: 40px;
+  border-radius: 5px;
+  background-color:lightblue;
+}
+.transform:hover{
+  transform: translate(10px,10px);
+}
+.transform-1:hover{
+  transform: scale(1.5,2);
+}
+.transform-2:hover{
+  transform: rotate(90deg);
+}
+.transform-3:hover{
+  transform: skew(50deg,20deg) ;
+}
+
+/* .transform:hover{
+  transform: translateX(50px) scale(1.5) rotate(45deg);
+} */
+
+
+.transform-4,.transform-5,.transform-6,.transform-7{
+  transition: transform 0.5s ease;
+}
+.transform-4:hover{
+  transform: translate(20px,30px);         
+  
+  /* transition: transform 1s-duration ease-in-out-timing function 0.5s-time delay; - shorthand property */
+
+}
+.transform-5:hover{
+  transform: scale(1.5);         
+}
+
+.transform-6:hover{
+  transform: rotate(95deg);         
+}
+
+.transform-7:hover{
+  transform: skew(20deg,30deg);         
+}
+
+
+
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-30px); }
+  100% { transform: translateY(0); }
+}
+
+.bounce{
+  border: 2px solid black;
+  width: 100px;
+  height: 40px;
+  border-radius: 5px;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:lightblue;
+  animation-name: bounce;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
