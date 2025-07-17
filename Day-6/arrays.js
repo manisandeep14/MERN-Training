@@ -24,9 +24,9 @@ console.log(arr)
 
 //pop
 //removing the element at last
-arr.pop() // arr =  [10, 20, 30 , 40]
+arr.pop() // arr =  [10, 20, 30 , 40, 50, 60]
 console.log(arr)
-arr.pop() // arr =  [10, 20, 30]
+arr.pop() // arr =  [10, 20, 30,40, 50]
 console.log(arr)
 
 //Shift -> Removes the element from first 
@@ -38,13 +38,13 @@ console.log(arr)
 //Unshift -> Add the element at first
 arr.unshift(20) //arr = [20, 30 , 40, 50]
 console.log(arr)
-arr.unshift(20) //arr = [10 ,20, 30 , 40, 50]
+arr.unshift(10) //arr = [10 ,20, 30 , 40, 50]
 console.log(arr)
 
 //Splice -> Removes the elements from start with specifieed count
 
 // arr.splice(start, count)
-arr.splice(1, 2) //arr = [10 ,20,50] - removes 20, 30 as start is index 1 and count is 2
+arr.splice(1, 2) //arr = [10 ,40,50] - removes 20, 30 as start is index 1 and count is 2
 console.log(arr)
 
 //Note All The Above Functions will also modify the above existing arrray elements
@@ -52,13 +52,13 @@ console.log(arr)
 // IndexOf - returns the index of the element if present else - 1
 
 arr.indexOf(20) //1
-console.log(arr)
+console.log(arr.indexOf(40))
 arr.indexOf(100) //-1
 console.log(arr)
 
 //includes -> Returns true if element present else false
 arr.includes(10)//true
-console.log(arr)
+console.log(arr.includes(10))
 arr.includes(100)//false
 console.log(arr)
 
@@ -73,28 +73,27 @@ console.log(newArr)
 
 
 
+//map -> It accepts a callback
+    //-> for every element, callback is executed
+    //-> returns an array
+arr.map((ele) => console.log(ele)); 
 
+//output : 10 20 30 40 50 60 70 80 90 100
+//returrned value : undefined ....10 times
+let squares = arr.map((ele) => ele * ele)
+console.log(squares)
+//100 400 900 1600 2500
 
+//filter -> It accepts a callback
+        //-> for every element, callback is executed
+        //-> returns an array of elements whose condition is satisfied
+let filteredArr = arr.filter((ele) => ele > 25)
+console.log(filteredArr)
 
-
-
-
-
-
-
-// let arr = [10 ,20, 30 , 40, 50]
-// let filteredArr = arr.filter((ele) => ele > 25)//30 40 50
-
-// let arr = [10 ,20, 30 , 40, 50]
-// let positiveArr = arr.filter((ele)=> ele>=0) // 1 7 3 8
-
-
-// find -->
-// findIndex-->
-
-// arr = [10 ,20, 30 , 40, 50]
-
-// arr.find(ele => ele > 30) //40
-// arr.findIndex(ele => ele > 30)  //3
-
-// arr.find(ele)
+//returns undefined
+arr = [10, 20, 30, 40, 50];
+result = arr.map((ele) => {
+  console.log(ele);
+  // return ele
+});
+console.log(result);

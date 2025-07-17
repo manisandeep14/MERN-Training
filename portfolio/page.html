@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mani Sandeep - Aspiring AI Engineer</title>
+
+  <!-- Offline Google Font -->
+  <style>
+    @font-face {
+      font-family: 'Outfit';
+      src: url('./fonts/Outfit.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+    }
+    body {
+      font-family: 'Outfit', sans-serif;
+    }
+    .hero-bg {
+      background-image: url('./bg/cubes.png');
+    }
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+    .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+
+  <!-- Offline Tailwind CSS -->
+  <link rel="stylesheet" href="./css/tailwind.min.css" />
+</head>
+
+<body class="bg-[#0f172a] text-white">
+  <!-- Header -->
+  <header class="flex justify-between items-center px-6 py-4 bg-[#0a0e1a]">
+    <h1 class="text-2xl font-bold">Mani Sandeep</h1>
+    <nav class="space-x-6 hidden md:flex">
+      <a href="#" class="hover:text-blue-400">Know More About Me</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-bg flex flex-col md:flex-row items-center justify-between px-6 py-20 md:px-20 relative">
+    <div class="text-center md:text-left md:w-1/2 space-y-3 z-10">
+      <h2 class="text-5xl font-extrabold leading-tight">Mani <br />Sandeep</h2>
+      <p class="text-xl text-blue-300">Aspiring AI Engineer</p>
+      <a href="#works">
+        <button class="mt-6 bg-blue-500 hover:bg-blue-600 px-6 py-2 rounded text-white">↓ Recent Works</button>
+      </a>
+    </div>
+    <div class="md:w-1/2 mt-10 md:mt-0 flex justify-center">
+      <img style="border-radius: 40%; box-shadow: 0px 10px 12px rgba(227, 225, 225, 0.3); opacity: 1;" src="./image.png" alt="Mani Sandeep" class="w-72 h-auto rounded-xl opacity-90 hue-rotate-[-10deg]" />
+    </div>
+  </section>
+
+  <!-- Recent Works Section -->
+  <section id="works" class="px-6 md:px-20 py-16">
+    <h3 class="text-3xl font-bold mb-6 text-center">Recent Works</h3>
+    <div class="flex space-x-4 overflow-x-auto scrollbar-hide">
+      <!-- Work cards here -->
+      <div class="min-w-[250px] bg-[#1e293b] rounded-xl p-4">
+        <h4 class="text-xl font-semibold mb-2">Resume Grader</h4>
+        <p>AI-powered resume tool scoring resumes based on job-match.</p>
+      </div>
+      <div class="min-w-[250px] bg-[#1e293b] rounded-xl p-4">
+        <h4 class="text-xl font-semibold mb-2">Portfolio Website</h4>
+        <p>Designed and built a modern responsive portfolio with Tailwind CSS.</p>
+      </div>
+      <div class="min-w-[250px] bg-[#1e293b] rounded-xl p-4">
+        <h4 class="text-xl font-semibold mb-2">AI Chatbot</h4>
+        <p>Custom GPT-based chatbot for career guidance and resume analysis.</p>
+      </div>
+      <div class="min-w-[250px] bg-[#1e293b] rounded-xl p-4">
+        <h4 class="text-xl font-semibold mb-2">Student Productivity App</h4>
+        <p>A task & habit tracker app using modern UI and motivational tools.</p>
+      </div>
+      <div class="min-w-[250px] bg-[#1e293b] rounded-xl p-4">
+        <h4 class="text-xl font-semibold mb-2">Generative UI Tool</h4>
+        <p>Converts code to responsive UI using AI and Figma APIs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#0a0e1a] text-center py-6 space-y-2">
+    <div class="space-x-6">
+      <a href="#" class="hover:underline">YouTube</a>
+      <a href="#" class="hover:underline">Instagram</a>
+      <a href="#" class="hover:underline">LinkedIn</a>
+    </div>
+    <p class="text-sm">© All Rights Reserved by Mani Sandeep</p>
+  </footer>
+</body>
+</html>

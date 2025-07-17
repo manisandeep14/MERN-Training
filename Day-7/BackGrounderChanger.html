@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Back Ground Changer</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body{
+      font-family: sans-serif;
+      line-height: 1.5;
+      background-color: lightcyan;
+      margin-top: 80px;
+    }
+    h2{
+      font-size: 16px;
+    }
+    button{
+      padding: 10px 20px;
+      background-color: white;
+      border: 2px solid lightslategray;
+      border-radius: 5px;
+    }
+    button:hover{
+      background-color: lightblue;
+    }
+    button:active{
+      transform: scale(0.8);
+    }
+    
+  </style>
+</head>
+<body>
+  <center>
+    <h1>
+      Back Ground Changer
+    </h1>
+    <h2>
+      Click the button and see the Magic!
+    </h2>
+    <button id="btn">
+      click me!
+    </button>
+  </center>
+
+  <center>
+    <img src="./../images/darling.png" alt="">
+  </center>
+  <script>
+
+    const button = document.querySelector('#btn')
+
+      button.addEventListener('click', () => {
+        const str = "0123456789abcdef"
+        let hex = "#"
+        for (let i = 0; i < 6; i += 1) {
+          const index = Math.floor(Math.random() * 16)
+          hex += str[index]
+        }
+        document.body.style.backgroundColor = hex
+      })
+
+      
+  
+  //  const str = "0123456789abcdef"
+  //  let hex = "#"
+  //   for(let i = 0; i < 6; i+=1){
+  //       var index = Math.floor(Math.random()*16)
+  //       hex += str[index]
+  //     }
+  //     console.log(hex)
+
+
+  </script>
+</body>
+</html>
