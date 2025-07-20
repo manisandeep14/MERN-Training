@@ -31,6 +31,32 @@
       <button class="btn btn--roll">🎲 Roll dice</button>
       <button class="btn btn--hold">📥 Hold</button>
     </main>
-    <script src="script.js"></script>
+    <script>
+       let rollDice = document.querySelector('.btn--roll')
+       let diceImg = document.querySelector('.dice')
+       let p0Score = document.querySelector('#current--0')
+      let p1Score = document.querySelector('#current--1')
+      let currentPlayer0 = document.querySelector('#name--0')
+      let currentPlayer1 = document.querySelector('#name--1')
+
+       rollDice.addEventListener('click', () => {
+        const diceDigit = Math.floor(Math.random() * 6)+1
+        //console.log(diceDigit)
+        diceImg.getAttribute('src')
+        //console.log(diceImg)
+        diceImg.setAttribute('src', `dice-${diceDigit}.png`)
+        let currentScore = Number(p0Score.textContent)
+        if(diceDigit === 1){
+          currentScore = 0
+          p0Score.textContent = currentScore
+          
+        }
+        currentScore += diceDigit
+        console.log(currentScore)
+        p0Score.textContent = currentScore
+       })
+
+       
+    </script>
   </body>
 </html>
