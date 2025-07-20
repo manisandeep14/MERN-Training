@@ -24,7 +24,7 @@ form.addEventListener('submit', (e) =>{
 	userEmailFun(Emailname);
 
 	userPasswordFun(passKey);
-	console.log(regex1.test(passKey.value));
+	//console.log(regex1.test(passKey.value));
 	parallelCheck(passKey, passKey2);
 });
 
@@ -61,12 +61,13 @@ function userEmailFun(Emailname){
 	}
 	
 }
-
+let isPasskey = false;
 function userPasswordFun(passKey){
 	if(regex1.test(passKey.value)){
 		passwordError.textContent = "valid Password"
 		passwordError.classList.add('success')
 		InputBox[2].classList.add('success')
+		isPasskey = true;
 	}
 	else{
 		passwordError.textContent = "Invalid PassWord"
@@ -76,7 +77,7 @@ function userPasswordFun(passKey){
 }
 
 function parallelCheck(passKey, passkey2){
-	if(passKey === 1 && passKey.value === passkey2.value){
+	if(isPasskey === true && passKey.value === passkey2.value){
 		passwordError1.textContent = "Matched"
 		passwordError1.classList.add('success')
 		InputBox[3].classList.add('success')
@@ -86,6 +87,8 @@ function parallelCheck(passKey, passkey2){
 		passwordError1.classList.add('error')
 		InputBox[3].classList.add('error')
 	}
+	console.log(isPasskey === true)
+	console.log(passKey.value === passkey2.value)
 }
 
 
