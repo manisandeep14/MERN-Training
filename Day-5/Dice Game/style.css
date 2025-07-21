@@ -138,6 +138,9 @@ main {
 .btn--hold {
   top: 46.1rem;
 }
+.btn-clone{
+  top: 54rem;
+}
 
 .btn:active {
   transform: translate(-50%, 3px);
@@ -168,4 +171,19 @@ main {
 
 .hidden {
   display: none;
+}
+
+.btn-clone{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #000000;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 1.8rem;
+  font-weight: 400;
+  padding: 0.7rem 2.5rem;
+  border-radius: 50rem;
+
 }

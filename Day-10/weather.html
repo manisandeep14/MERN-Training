@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather API</title>
+</head>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(130deg, #89f7fe, rgb(255, 118, 139), #66a6ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .weather-container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 1px 2px rgba(0, 0, 0,  0.5);
+    width: 350px;
+    text-align: center;
+  }
+
+  .search-bar {
+    display: flex;
+    margin-bottom: 20px;
+    gap: 10px;
+  }
+
+  input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+  }
+
+  button {
+    padding: 10px 16px;
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  .weather-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .weather-main {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: center;
+  }
+
+  .weather-main img {
+    width: 64px;
+    height: 64px;
+  }
+
+  .weather-details {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+  }
+
+  .hidden {
+    display: none;
+  }
+</style>
+
+<body>
+  <div class="weather-container">
+    <h1>🌦️ Weather App</h1>
+    <div class="search-bar">
+      <input type="text" id="city-input" placeholder="Enter city name..." />
+      <button id="search-btn">Search</button>
+    </div>
+
+    <div class="weather-card hidden" id="weather-card">
+      <h2 id="city-name">London, UK</h2>
+      <p id="local-time">Local Time: --:--</p>
+      <div class="weather-main">
+        <img id="weather-icon" src="" alt="Weather Icon" />
+        <div>
+          <h3 id="temperature">18°C</h3>
+          <p id="weather-condition">Partly cloudy</p>
+        </div>
+      </div>
+      <div class="weather-details">
+        <p>🌬️ Wind: <span id="wind">5.8 kph</span></p>
+        <p>💧 Humidity: <span id="humidity">73%</span></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const searchBtn = document.getElementById("search-btn");
+    const cityInput = document.getElementById("city-input");
+
+    const card = document.getElementById("weather-card");
+    const cityName = document.getElementById("city-name");
+    const localTime = document.getElementById("local-time");
+    const temperature = document.getElementById("temperature");
+    const conditionText = document.getElementById("weather-condition");
+    const icon = document.getElementById("weather-icon");
+    const humidity = document.getElementById("humidity");
+    const wind = document.getElementById("wind");
+
+    searchBtn.addEventListener("click", () => {
+      const city = cityInput.value.trim();
+      if (!city) {
+        alert("Please enter a city name!");
+        return;
+      }
+      fetchWeather(city);
+    });
+
+    async function fetchWeather(city) {
+      
+      const url = `https://api.weatherapi.com/v1/current.json?key=4b9aca39f8d44ba787290557252107&q=${encodeURIComponent(city)}&aqi=no`;
+
+      try {
+        const res = await fetch(url);
+
+        if (res === 200) {
+          const errorData = await res.json();
+          if (errorData.error && errorData.error.message) {
+            alert("Error: " + errorData.error.message);
+          } else {
+            alert("Unknown error occurred!");
+          }
+          throw new Error("Response not OK");
+        }
+
+        const data = await res.json();
+
+       
+        const location = data.location 
+        const current = data.current 
+        const condition = current.condition 
+
+        cityName.textContent = `${location.name}, ${location.country}`;
+        localTime.textContent = `Local Time: ${location.localtime ? location.localtime.split(" ")[1] : "--:--"}`;
+        temperature.textContent = `${current.temp_c ?? "--"}°C`;
+        conditionText.textContent = condition.text || "N/A";
+        icon.src = condition.icon ? "https:" + condition.icon : "";
+        humidity.textContent = `${current.humidity ?? "--"}%`;
+        wind.textContent = `${current.wind_kph ?? "--"} kph`;
+
+        card.classList.remove("hidden");
+      } catch (error) {
+        console.error("Fetch error:", error);
+      }
+    }
+  </script>
+
+</body>
+
+</html>

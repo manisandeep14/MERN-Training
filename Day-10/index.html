@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>callBack - promises</title>
+  <style>
+    center {
+      font-size: 50px;
+      font-weight: bold;
+      font-family: arial;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+
+<body>
+   <center>Java Script CALL BACK - Promises</center>
+  <script>
+    //WITH OUT CALLL BACK
+
+    // let tripCost;
+    // let planTrip= () => {
+    //   setTimeout(()=>{
+    //     console.log("Let's goo to vietnam");
+    //     tripCost = 80000;
+    //   }, 2000);
+    // }
+
+    // let calculateCost = () => {
+    //   console.log(tripCost);
+    // }
+    // calculateCost();
+    // planTrip();
+    
+
+    // //WITH CALL BACK
+
+    // var tripCost;
+    // let planTrip = (callback) => {
+    //   setTimeout(() => {
+    //     console.log("Let's goo to vietnam");
+    //     tripCost = 80000;
+    //     callback();
+    //   }, 2000);
+    // }
+
+    // let calculateCost = () => {
+    //   console.log(tripCost);
+    // }
+    // planTrip(calculateCost);
+
+
+    // //Call back is a function that is executed after another function has completed itz execution.
+
+    // //setTimeout and setInterval are asynchronous
+
+    
+    let print= (value) => {
+      setTimeout(() => {
+        console.log(value)
+      }, Math.floor(Math.random()*1000));
+    }
+    let printall = () =>{
+      print('A');
+      print('B');
+      print('C');
+      console.log("Printing Completed");
+    }
+    printall()
+
+    // //If we want the desired output as 
+    // //A
+    // //B
+    // //C
+    // //Printing Completed
+    // //We need to pass The functions as call back to other functions
+
+    // // Call Back Hell 
+    
+    // // let print= (value, callback) => {
+    // //   setTimeout(() => {
+    // //     console.log(value)
+    // //     callback();
+    // //   }, Math.floor(Math.random()*1000));
+    // // }
+    // // let printall = () =>{
+    // //   print('A', () =>{
+    // //     print('B', () =>{
+    // //       print('C', ()=>{
+    // //         console.log("Printing completed");
+    // //       })
+    // //     })
+    // //   })
+    // // }
+    // // printall()
+
+
+    // //While doing multiple asynchronous operations one call back gets nested into another call back which leads to "CALL BACK HELL"
+    
+    // //In order to resolve callback hell "promises will be used" 
+
+    // //Promises Provides Structured way to right Asynchronous calls 
+
+    // //Promise object represents the eventual completion or failure of an ASYNCHRONOUS Operation and handles resulting value.
+
+    // //A promise has three states:
+    // //RESOVLED : SUCCESS
+    // //REJECTED : FAILURE
+    // //PENDING : DON't KNOW STATUS
+
+
+    // //Exception Handling :
+    // console.log("---------->Exception Handling<------------")
+    // try{
+    //   //code that might result in an error 
+    //   //let value = 7/0;
+    //   //console.log(num)
+    //   throw new Error("Error is Created")
+    // }
+    // catch(error){
+    //   // code where exception/ errors are handled
+    //   console.log(error)
+    //   console.log(error.message)
+    //   console.log(error.name)
+    // }
+    // finally{
+    //   //Executes EveryTime
+    //   console.log("Program Completed")
+    //   console.log("-----------------------")
+    // }
+
+
+
+    // // Promises 
+
+    // // let myPromises = new Promise((resolve, reject) =>{
+    // //   setTimeout(() =>{
+    // //     if(5 === 5){
+    // //       // success
+    // //       const product = {
+    // //         name : 'Iphone',
+    // //         price : 40000,
+    // //         brand : 'apple',
+    // //         category : 'Mobiles'
+    // //       }
+    // //       resolve(product)
+    // //     }
+    // //     else{
+    // //       // Error Scenario
+    // //       reject(new Error("No details found for the given productId"))
+    // //     }
+    // //   },2000)
+    // // })
+    // // myPromises
+    // //   .then((data) => console.log(data)) //success
+    // //   .catch((error) =>{
+    // //     console.log(error.name)
+    // //     console.log(error.message)//Failure
+    // //   })
+
+
+    //   // Promises Chaning (or) chaining of Promises
+
+    //   // let print = (value) =>{
+    //   //   let myPromise = new Promise((resolve, reject) =>{
+    //   //     setTimeout(() =>{
+    //   //       console.log(value);
+    //   //       resolve("Success");
+    //   //     }, Math.floor(Math.random()*1000));
+    //   //   })
+    //   //   return myPromise;
+    //   // }
+    //   // let printAll = () => {
+
+    //   //   print('A')
+    //   //     .then((data) =>{
+    //   //       console.log(data);
+    //   //       return print('B')
+    //   //     })
+    //   //     .then((data) =>{
+    //   //       console.log(data);
+    //   //       return print('C')
+    //   //     })
+    //   //     .then((data) =>{
+    //   //       console.log(data);
+    //   //       console.log('Printing Completed')
+    //   //     })
+    //   // }
+    //   // printAll()
+
+    //   //if we have more asynchronous calls we'll be chaning promises together , which becomes difficult to debug.
+    //   //Inorder to resolve "async-await" can be used
+
+
+    //   //ASYNC - AWAIT
+
+    //   let print = (value) =>{
+    //     let myPromise = new Promise((resolve, reject) =>{
+    //       setTimeout(() =>{
+    //         console.log(value);
+    //         resolve("Success");
+    //       }, Math.floor(Math.random()*1000));
+    //     })
+    //     return myPromise;
+    //   }
+    //   printAll = async ()=>{
+    //     await print('A');
+    //     await print('B');
+    //     await print('C');
+    //     console.log("Printing Completed")
+    //   }
+    //   printAll()
+      //ASYNC :
+      //async key word is used to declare a function as asynchronous.
+      //it returns a promise automatically. async return a promise.
+      //we can use "await" only inside an async function.
+
+      //Await:
+      //await keyword is useed to pass the execution of async function until a promise is resolve.
+      //It makes asynchronous code look like synchronous code
+
+
+      //--->FETCH<-----
+      //Fetch is a built in java script function which is used to make http request. Like --> host,get, etc..
+      //Fetch always returna a promise that need to be either resolved or rejected
+
+      //DEFAULT METHOD is GET :
+
+     
+  </script>
+   <!-- <script src="fetch.js"></script> -->
+</body>
+
+</html>

@@ -34,16 +34,19 @@ function usernameFun(uname) {
 if(uname.value === ''){
 		unameError.textContent = "user name should not be empty!!!"
 		unameError.classList.add('error')
+		InputBox[0].classList.remove('success')
 		InputBox[0].classList.add('error')
 	}
 	else if(uname.value.length < 8){
 		unameError.textContent = "Atleast 8 letters"
 		unameError.classList.add('error')
+		InputBox[0].classList.remove('success')
 		InputBox[0].classList.add('error')
 	}
 	else{
 		unameError.textContent = "Valid name"
 		unameError.classList.add('success')
+		InputBox[0].classList.remove('error')
 		InputBox[0].classList.add('success')
 	}
 }
@@ -52,11 +55,13 @@ function userEmailFun(Emailname){
 	if(regex.test(Emailname.value)){
 		emailError.textContent = "Valid Email"
 		emailError.classList.add('success')
+		InputBox[1].classList.remove('error')
 		InputBox[1].classList.add('success')
 	}
 	else{
 		emailError.textContent = "Invalid Email"
 		emailError.classList.add('error')
+		InputBox[1].classList.remove('success')
 		InputBox[1].classList.add('error')
 	}
 	
@@ -66,12 +71,14 @@ function userPasswordFun(passKey){
 	if(regex1.test(passKey.value)){
 		passwordError.textContent = "valid Password"
 		passwordError.classList.add('success')
+		InputBox[2].classList.remove('error')
 		InputBox[2].classList.add('success')
 		isPasskey = true;
 	}
 	else{
 		passwordError.textContent = "Invalid PassWord"
 		passwordError.classList.add('error')
+		InputBox[2].classList.remove('success')
 		InputBox[2].classList.add('error')
 	}
 }
@@ -80,11 +87,13 @@ function parallelCheck(passKey, passkey2){
 	if(isPasskey === true && passKey.value === passkey2.value){
 		passwordError1.textContent = "Matched"
 		passwordError1.classList.add('success')
+		InputBox[3].classList.remove('error')
 		InputBox[3].classList.add('success')
 	}
 	else{
 		passwordError1.textContent = "Mismatched"
 		passwordError1.classList.add('error')
+		InputBox[3].classList.remove('success')
 		InputBox[3].classList.add('error')
 	}
 	console.log(isPasskey === true)
