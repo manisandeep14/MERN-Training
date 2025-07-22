@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fetch - asyn and await</title>
+</head>
+<style>
+  body{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    background-color: lightgrey;
+  }
+  section{
+    box-shadow: 0 4px 8px 5px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    height: 400px;
+    text-align: center;
+    margin-top: 50px;
+    background-color: antiquewhite;
+  }
+  input, button{
+    display: inline;
+  }
+  input{
+    width: 220px;
+    height: 35px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 2px solid lightgrey;
+  }
+  button{
+    padding: 11px;
+    background-color: lightcyan;
+    border: 2px solid lightgrey;
+    transition: transform 0.5s ease;
+    border-radius: 5px;
+  }
+  button:hover{
+    transform: scale(1.1);
+  }
+  img{
+    width: 150px;
+    height: 150px;
+    
+  }
+  .img-con{
+    margin-top: 20px;
+  }
+  .hands-con{
+    display: flex;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 15px;
+  }
+  .hand1{
+    transform: rotate(45deg);
+  }
+  .hand2{
+    transform: rotate(295deg);
+  }
+  h3{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 13%;
+  }
+</style>
+<body>
+  <section>
+    <h3>QR Code Generator</h3>
+    <input type="text" placeholder="Generate your Code">
+    <button >Generate</button>
+    <div class="img-con"><img  src="./../images/logo1.png"></div>
+    <div class = "hands-con">
+      <div class="hand2">👉🏻</div>
+      <div>Your QR will appear here</div>
+      <div class="hand1">👈🏻</div>
+    </div>
+    
+    
+  </section>
+  <script>
+    const inpText = document.querySelector("input")
+    
+    const genClick = document.querySelector('button')
+    
+    genClick.addEventListener("click",async () => {
+      if(inpText.value.trim() === ""){
+        alert("Give text to the Input Field!!!")
+        return;
+      }
+      const url = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data= ${inpText.value}`
+
+      let response = await fetch(url)
+      console.log(response)
+    
+      if(response.status === 200){
+        document.querySelector('img').setAttribute('src',url)
+      }
+    } ) 
+  </script>
+</body>
+</html>

@@ -16,7 +16,7 @@
     .container {
       max-width: 1200px;
       margin: auto;
-      
+
     }
 
     h1 {
@@ -70,17 +70,27 @@
       font-weight: bold;
       color: #333;
     }
-    #product-list{
+
+    #product-list {
       position: relative;
     }
-    .close-button{
-      color: white;
-      background-color: red;
-      padding: 5px;
+
+    .close-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #ff5c5c;
       border: none;
+      color: white;
+      font-size: 14px;
+      padding: 4px 8px;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    .card {
       position: relative;
-      top: -35px;
-      left: 95%;
+      /* Important for absolute close button */
     }
   </style>
 
@@ -92,24 +102,24 @@
     <div id="product-list" class="product-list"></div>
   </div>
 
- <script>
-  let getData = async () => {
-    try {
-      let response = await fetch('http://127.0.0.1:5500/products1.json');
-      console.log("Response:", response);
-      console.log("URL:", response.url);
+  <script>
+    let getData = async () => {
+      try {
+        let response = await fetch('http://127.0.0.1:5500/products1.json');
+        console.log("Response:", response);
+        console.log("URL:", response.url);
 
-      let data = await response.json();
-      console.log("Fetched Data:", data);
+        let data = await response.json();
+        console.log("Fetched Data:", data);
 
-      let products = data.products;
-      const productList = document.getElementById('product-list');
+        let products = data.products;
+        const productList = document.getElementById('product-list');
 
-      products.forEach(product => {
-        const card = document.createElement('div');
-        card.className = 'card';
+        products.forEach(product => {
+          const card = document.createElement('div');
+          card.className = 'card';
 
-        card.innerHTML = `
+          card.innerHTML = `
           <img src="${product.image}" alt="${product.name}">
           <div class="card-body">
             <button class="close-button">X</button>
@@ -119,23 +129,24 @@
           </div>
         `;
 
-        
-        productList.appendChild(card);
+          // Append card to the DOM
+          productList.appendChild(card);
 
-        
-        const closeBtn = card.querySelector('.close-button');
-        closeBtn.addEventListener('click', () => {
-          card.remove();
+          // Add click event to close button
+          const closeBtn = card.querySelector('.close-button');
+          closeBtn.addEventListener('click', () => {
+            card.remove();
+          });
         });
-      });
 
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  };
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
 
-  getData();
-</script>
+    getData();
+  </script>
+
 
 </body>
 
