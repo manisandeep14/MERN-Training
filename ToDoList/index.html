@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    To Do List
+  </title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #74ebd5, #9face6);
+      margin: 0;
+      padding: 30px;
+      color: #03045e;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: #023e8a;
+      font-weight: bold;
+    }
+
+    .todo-input-grid,
+    .js-todolist {
+      display: grid;
+      grid-template-columns: 1fr 1fr auto auto;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+      max-width: 800px;
+      margin: 0 auto 20px;
+    }
+
+    .name-input,
+    .toDoDate {
+      font-size: 1rem;
+      padding: 10px;
+      border: 2px solid #ade8f4;
+      border-radius: 8px;
+      outline: none;
+      background-color: #e0f7fa;
+      transition: 0.3s;
+      color: #03045e;
+    }
+
+    .name-input:focus,
+    .toDoDate:focus {
+      border-color: #00b4d8;
+      background-color: #caf0f8;
+    }
+
+    .addbutton,
+    .clearall {
+      font-size: 1rem;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-weight: bold;
+    }
+
+    .addbutton {
+      background-color: #00b4d8;
+      color: white;
+    }
+
+    .addbutton:hover {
+      background-color: #0077b6;
+    }
+
+    .clearall {
+      background-color: #ef233c;
+      color: white;
+    }
+
+    .clearall:hover {
+      background-color: #d90429;
+    }
+
+    .js-todolist div {
+      padding: 10px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0px 5px 10px rgba(0, 123, 255, 0.2);
+      color: #03045e;
+    }
+
+    .delete-button {
+      background-color: #ff6b6b;
+      color: white;
+      border: none;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      padding: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    .delete-button:hover {
+      background-color: #c9184a;
+    }
+  </style>
+
+</head>
+
+<body style="font-family: arial;">
+  <p class="title">Todo List</p>
+  <div class="todo-input-grid">
+    <input type="text" , placeholder="Todo name" class="js-name-input name-input">
+    <!--here i use two classes in one input-->
+    <input type="date" class="toDoDate">
+    <button class="addbutton">Add</button>
+    <button class="clearall">Clear</button>
+  </div>
+  <div class="js-todolist due-date-input"></div>
+  <!--java script-->
+  <script>
+    //This is a syntax of comment in js and itz the js code.
+    /*const array = [ 10, 20, 30];
+    console.log(array)  
+    console.log(array[0]);
+    array[0] = 33;
+    console.log(array)
+
+
+    [1, 'hello', true, { name: 'socks'}] */
+
+    const Todolist = [];
+
+    renderToDoList();
+
+    function renderToDoList() {
+
+      let TodolistHtml = '';
+
+      Todolist.forEach(function (todoObject, index) {
+        // const todoObject = Todolist[i];
+        //const name = todoObject.name;
+        //const dueDate = todoObject.dueDate;
+        const { name, dueDate } = todoObject;
+        const html = `
+                <div>${name} </div>
+                <div>${dueDate} </div>
+                  <button onclick="
+                  Todolist.splice(${index},1);
+                  renderToDoList();""
+                  class = "delete-button">Delete</button>
+                    `;
+        TodolistHtml = TodolistHtml + html;
+      });
+
+      //for(let i = 0 ; i < Todolist.length ; i++){
+      //const todoObject = Todolist[i];
+      //const name = todoObject.name;
+      //const dueDate = todoObject.dueDate;
+      //const { name , dueDate } = todoObject;
+      //const html = `
+      //  <div>${name} </div>
+      //<div>${dueDate} </div>
+      //<button onclick="
+      //Todolist.splice(${i},1);
+      //renderToDoList();""
+      //lass = "delete-button">Delete</button>
+      //`;
+      //TodolistHtml = TodolistHtml + html;
+      //}
+      console.log(TodolistHtml)
+      document.querySelector('.js-todolist').innerHTML = TodolistHtml;
+
+    }
+
+    document.querySelector('.addbutton',).addEventListener('click', () => {
+      addtodo();
+    });//by clicking add it add's the to do work to the list
+
+    function addtodo() {
+      const inputElement = document.querySelector('.js-name-input');
+      const name = inputElement.value;
+      const dateInputElement = document.querySelector('.toDoDate');
+      const dueDate = dateInputElement.value;
+      if (inputElement.value === '') {
+        alert('Enter your next Task')
+      }
+      else {
+        Todolist.push({
+          //name : name ;
+          // dueDate : dueDate
+          name,
+          dueDate
+        });
+        //console.log(Todolist);
+        inputElement.value = ''; // i call the inputElement.value again to became empty after the text given to the text box then it automatically resets as empty box by this call.
+        renderToDoList();
+      }
+    }
+
+    let clearall = document.querySelector('.clearall');
+    clearall.addEventListener('click', () => {
+      const todoList = document.querySelector('.js-todolist');
+      todoList.innerHTML = '';
+    })
+  </script>
+</body>
+
+</html>

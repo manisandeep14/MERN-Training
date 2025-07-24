@@ -62,18 +62,18 @@
     // //setTimeout and setInterval are asynchronous
 
     
-    let print= (value) => {
-      setTimeout(() => {
-        console.log(value)
-      }, Math.floor(Math.random()*1000));
-    }
-    let printall = () =>{
-      print('A');
-      print('B');
-      print('C');
-      console.log("Printing Completed");
-    }
-    printall()
+    // let print= (value) => {
+    //   setTimeout(() => {
+    //     console.log(value)
+    //   }, Math.floor(Math.random()*1000));
+    // }
+    // let printall = () =>{
+    //   print('A');
+    //   print('B');
+    //   print('C');
+    //   console.log("Printing Completed");
+    // }
+    // printall()
 
     // //If we want the desired output as 
     // //A
@@ -201,22 +201,22 @@
 
     //   //ASYNC - AWAIT
 
-    //   let print = (value) =>{
-    //     let myPromise = new Promise((resolve, reject) =>{
-    //       setTimeout(() =>{
-    //         console.log(value);
-    //         resolve("Success");
-    //       }, Math.floor(Math.random()*1000));
-    //     })
-    //     return myPromise;
-    //   }
-    //   printAll = async ()=>{
-    //     await print('A');
-    //     await print('B');
-    //     await print('C');
-    //     console.log("Printing Completed")
-    //   }
-    //   printAll()
+      let print = (value) =>{
+        let myPromise = new Promise((resolve, reject) =>{
+          setTimeout(() =>{
+            console.log(value);
+            resolve("Success");
+          }, Math.floor(Math.random()*1000));
+        })
+        return myPromise;
+      }
+      printAll = async ()=>{
+        await print('A');
+        await print('B');
+        await print('C');
+        console.log("Printing Completed")
+      }
+      printAll()
       //ASYNC :
       //async key word is used to declare a function as asynchronous.
       //it returns a promise automatically. async return a promise.

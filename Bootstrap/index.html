@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Dashboard</title>
+  <!-- Local Bootstrap CSS -->
+  <link rel="stylesheet" href="bootstrap.css">
+  <style>
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .sidebar {
+      min-height: 100vh;
+      background-color: #343a40;
+    }
+    .sidebar a {
+      color: #fff;
+      text-decoration: none;
+      display: block;
+      padding: 10px 20px;
+    }
+    .sidebar a:hover {
+      background-color: #495057;
+    }
+    .dashboard-content {
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      
+      <!-- Sidebar -->
+      <nav class="col-md-2 d-none d-md-block sidebar">
+        <div class="pt-3">
+          <h5 class="text-white text-center">Dashboard</h5>
+          <a href="#">🏠 Home</a>
+          <a href="#">📚 Courses</a>
+          <a href="#">📝 Assignments</a>
+          <a href="#">📊 Progress</a>
+          <a href="#">⚙️ Settings</a>
+          <a href="#">🚪 Logout</a>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="col-md-10 ml-sm-auto col-lg-10 px-4 dashboard-content">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+          <h2>Welcome, Student Name</h2>
+          <button class="btn btn-primary">Edit Profile</button>
+        </div>
+
+        <!-- Cards -->
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="card text-white bg-primary">
+              <div class="card-body">
+                <h5 class="card-title">Enrolled Courses</h5>
+                <p class="card-text">You have 5 active courses.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="card text-white bg-success">
+              <div class="card-body">
+                <h5 class="card-title">Completed Assignments</h5>
+                <p class="card-text">8 out of 10 assignments completed.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="card text-white bg-warning">
+              <div class="card-body">
+                <h5 class="card-title">Attendance</h5>
+                <p class="card-text">95% attendance this semester.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Table Section -->
+        <h4 class="mt-4">Upcoming Assignments</h4>
+        <table class="table table-striped mt-2">
+          <thead class="thead-dark">
+            <tr>
+              <th>Subject</th>
+              <th>Title</th>
+              <th>Due Date</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Mathematics</td>
+              <td>Algebra Worksheet</td>
+              <td>July 25, 2025</td>
+              <td><span class="badge badge-warning">Pending</span></td>
+            </tr>
+            <tr>
+              <td>Science</td>
+              <td>Lab Report</td>
+              <td>July 28, 2025</td>
+              <td><span class="badge badge-success">Submitted</span></td>
+            </tr>
+            <tr>
+              <td>English</td>
+              <td>Essay Writing</td>
+              <td>July 30, 2025</td>
+              <td><span class="badge badge-danger">Not Started</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

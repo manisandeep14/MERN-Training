@@ -1,51 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Contact Us - Toy Store</title>
-    <link rel="stylesheet" href="Day-2Assignment.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #fff8ee;
+        text-align: center;
+    }
 
+    header {
+        background-color: #ffa500;
+        padding: 15px;
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 30px;
+        gap: 20px;
+    }
+
+    .image-left img,
+    .image-right img {
+        height: 500px;
+        width: 500px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .contact-form {
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        width: 400px;
+        text-align: left;
+    }
+
+    .contact-form label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: bold;
+    }
+
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 16px;
+    }
+
+    .contact-form input[type="submit"] {
+        background-color: #ffa500;
+        border: none;
+        color: white;
+        padding: 12px 20px;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .contact-form input[type="submit"]:hover {
+        background-color: #ff8c00;
+    }
+
+    .table-section {
+        
+        padding: 20px;
+    }
+
+    .table-section table {
+        margin: 0 auto;
+        border-collapse: collapse;
+        width: 60%;
+    }
+
+    .table-section th,
+    td {
+        border: 1px solid #333;
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .table-section th {
+        background-color: #f0f0f0;
+    }
+
+    .table-section a {
+        display: block;
+        margin-top: 20px;
+        color: #330066;
+        font-weight: bold;
+        text-decoration: none;
+    }
+</style>
+
+<body>
     <header>
         <h1>Contact Us</h1>
     </header>
 
-    <form>
-        <label>Name:</label><br>
-        <input type="text" name="name"><br><br>
+    <div class="container">
+        <div class="image-left">
+            <img src="./../images/car6.jpg" alt="Left Ad">
+        </div>
 
-        <label>Email:</label><br>
-        <input type="email" name="email"><br><br>
+        <div class="contact-form">
+            <form>
+                <label>Name:</label>
+                <input type="text" name="name" required>
 
-        <label>Message:</label><br>
-        <textarea name="message" rows="4" cols="30"></textarea><br><br>
+                <label>Email:</label>
+                <input type="email" name="email" required>
 
-        <input type="submit" value="Send Message">
-    </form>
+                <label>Message:</label>
+                <textarea name="message" rows="4" required></textarea>
 
-    <h2>Store Opening Hours</h2>
-    <table border="1">
-        <tr>
-            <th>Day</th>
-            <th>Opening Hours</th>
-        </tr>
-        <tr>
-            <td>Monday - Friday</td>
-            <td>9:00 AM - 6:00 PM</td>
-        </tr>
-        <tr>
-            <td>Saturday</td>
-            <td>10:00 AM - 4:00 PM</td>
-        </tr>
-        <tr>
-            <td>Sunday</td>
-            <td>Closed</td>
-        </tr>
-    </table>
+                <input type="submit" value="Send Message">
+            </form>
+        </div>
 
-    <br>
-    <a href="Day-2Assignment.html">← Back to Home</a>
+        <div class="image-right">
+            <img src="./../images/car7.webp" alt="Right Ad">
+        </div>
+    </div>
 
+    <div class="table-section">
+        <h2>Store Opening Hours</h2>
+        <table>
+            <tr>
+                <th>Day</th>
+                <th>Opening Hours</th>
+            </tr>
+            <tr>
+                <td>Monday - Friday</td>
+                <td>9:00 AM - 6:00 PM</td>
+            </tr>
+            <tr>
+                <td>Saturday</td>
+                <td>10:00 AM - 4:00 PM</td>
+            </tr>
+            <tr>
+                <td>Sunday</td>
+                <td>Closed</td>
+            </tr>
+        </table>
+        <a href="index.html">← Back to Home</a>
+    </div>
 </body>
+
 </html>

@@ -29,9 +29,9 @@
     </section>
 
     <img src="dice-5.png" alt="Playing dice" class="dice" />
-    <button class="btn btn--new">🔄 New game</button>
-    <button class="btn btn--roll">🎲 Roll dice</button>
-    <button class="btn btn--hold">📥 Hold</button>
+    <button class="btn btn--new" id="btn-scale">🔄 New game</button>
+    <button class="btn btn--roll" id="btn-scale">🎲 Roll dice</button>
+    <button class="btn btn--hold" id="btn-scale">📥 Hold</button>
     <h5 class="btn-clone declare--win"></h5>
   </main>
 
@@ -51,7 +51,7 @@
     let currentScore0 = Number(p0Score.textContent)
     let currentScore1 = Number(p1Score.textContent)
     let currentPlayer = 0;
-    let winningScore = 50;
+    let winningScore = 20;
 
 
     //console.log(currentScore0)
@@ -116,6 +116,7 @@
         currentValue = 0
         currentPlayer0.textContent = currentValue
         currentScore0 = 0
+        p0Score = 0
         p0Score.textContent = currentScore0
         console.log("p0score", currentScore0)
         //console.log(currentScore0)
@@ -129,6 +130,7 @@
         currentScore0 += diceDigit
         console.log("p0score", currentScore0)
         p0Score.textContent = currentScore0
+        GameOver(currentScore0, currentPlayer)
       }
     }
 
@@ -140,15 +142,17 @@
         currentValue1 = 0
         currentPlayer1.textContent = currentValue1
         currentScore1 = 0
+        p1Score = 0
         p1Score.textContent = currentScore1
         console.log("p1score", currentScore1)
-        GameOver(currentValue1, currentPlayer)
+        GameOver(currentValue1, currentPlayer1)
         currentPlayer = 0;
       }
       else {
         currentScore1 += diceDigit
         console.log("p1score", currentScore1)
         p1Score.textContent = currentScore1
+        GameOver(currentScore1, currentPlayer1)
       }
     }
 
