@@ -7,6 +7,7 @@ const app = express()
 
 app.use(express.json())
 app.use('/', router)
+app.use(cors());
 
 mongoose.connect('mongodb://localhost:27017/studentdb')
     .then(() => console.log("Connection Established Successfully"))
